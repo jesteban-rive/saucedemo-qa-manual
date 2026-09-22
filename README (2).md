@@ -1,47 +1,109 @@
-# QA Manual - SauceDemo (saucedemo.com)
+# QA Manual - SauceDemo
 
-Proyecto de práctica de **QA Manual** sobre el sitio [SauceDemo](https://www.saucedemo.com), un e-commerce de prueba diseñado específicamente para practicar testing.
+Proyecto de práctica de **QA Manual** realizado sobre [SauceDemo](https://www.saucedemo.com), una aplicación web de demostración utilizada para practicar pruebas de software.
 
 ## 🎯 Objetivo
 
-Refrescar los fundamentos de QA manual: diseño de casos de prueba, ejecución, y reporte de defectos con severidad/prioridad — sin depender de un curso previo.
+Aplicar fundamentos de **QA Manual** mediante el diseño y ejecución de casos de prueba, así como la identificación y documentación de defectos encontrados durante las pruebas.
 
-## 📂 Contenido
+El proyecto se enfoca principalmente en los módulos de **Login, Carrito de compras y Checkout**.
+
+## 📂 Contenido del proyecto
 
 | Archivo | Descripción |
 |---|---|
-| `SauceDemo_QA_Test_Plan.xlsx` | Hoja de cálculo con 3 pestañas: **Casos de Prueba** (15 casos de Login, Carrito y Checkout), **Reporte de Bugs** (5 defectos con severidad/prioridad) y **Resumen** ejecutivo. |
-| `GUIA_GITHUB.md` | Guía paso a paso para subir este proyecto a un repositorio nuevo en GitHub. |
+| `SauceDemo_15_Test_Cases.xlsx` | 15 casos de prueba manual enfocados en Login, Carrito y Checkout, incluyendo pasos, resultados esperados, resultados reales y estado de ejecución. |
+| `SauceDemo_Bug_Report.xlsx` | Reporte de defectos encontrados durante las pruebas, incluyendo severidad, prioridad, pasos para reproducir, resultado esperado y resultado real. |
 
 ## 🧪 Alcance de las pruebas
 
-- **Login / Autenticación**: usuarios válidos, inválidos, bloqueados (`locked_out_user`), campos vacíos, y usuarios especiales (`problem_user`, `performance_glitch_user`).
-- **Carrito de compras**: agregar/quitar productos, badge del carrito, carrito vacío.
-- **Checkout**: validación de formulario (First Name, Last Name, Postal Code) y finalización de compra.
+### Login / Autenticación
+- Login exitoso con usuario válido.
+- Login con credenciales inválidas.
+- Validación de usuario bloqueado.
+- Validación de campos obligatorios.
+- Comportamiento de usuarios especiales de SauceDemo.
+- Comportamiento de `problem_user`.
+- Comportamiento de `performance_glitch_user`.
 
-## 🐞 Bugs encontrados (resumen)
+### 🛒 Carrito de compras
+- Agregar un producto al carrito.
+- Agregar múltiples productos.
+- Eliminar productos.
+- Ver el contenido del carrito.
+- Validar el contador de productos.
+- Visualización de un carrito vacío.
+
+### 💳 Checkout
+- Inicio del proceso de checkout.
+- Validación de campos obligatorios.
+- Validación del código postal.
+- Finalización de una compra.
+
+## 🐞 Defectos reportados
 
 | ID | Título | Severidad | Prioridad |
 |---|---|---|---|
-| BUG-001 | Imágenes rotas con `problem_user` | Baja | P3 |
+| BUG-001 | Imágenes incorrectas de productos con `problem_user` | Baja | P3 |
 | BUG-002 | Retrasos de rendimiento con `performance_glitch_user` | Media | P2 |
-| BUG-003 | Validación de checkout sin indicador visual por campo | Media | P3 |
-| BUG-004 | Postal Code acepta letras/caracteres especiales | Baja | P3 |
-| BUG-005 | Menú hamburguesa no cierra tras Logout/Reset en algunos navegadores | Baja | P4 |
+| BUG-003 | Validación de Checkout sin indicador visual claro por campo | Media | P3 |
+| BUG-004 | Postal Code acepta letras y caracteres especiales | Baja | P3 |
+| BUG-005 | Menú hamburguesa puede no cerrarse correctamente después de Logout o Reset App State | Baja | P4 |
 
-Ver el detalle completo (pasos para reproducir, resultado esperado vs. actual) en la pestaña **Reporte de Bugs** del Excel.
+El detalle de cada defecto se encuentra en `SauceDemo_Bug_Report.xlsx`, incluyendo los pasos para reproducirlo, resultado esperado, resultado real y estado.
+
+## 📊 Casos de prueba
+
+Se documentaron **15 casos de prueba manuales** en `SauceDemo_15_Test_Cases.xlsx`.
+
+Los casos incluyen:
+
+- **Login**
+- **Carrito**
+- **Checkout**
+- Validaciones positivas y negativas
+- Usuarios especiales de SauceDemo
+- Validaciones de formularios
+- Flujo de compra
+
+Cada caso contiene:
+
+- ID
+- Módulo
+- Título
+- Pasos para reproducir
+- Resultado esperado
+- Resultado real
+- Estado
 
 ## 🌐 Sitio bajo prueba
 
-- https://www.saucedemo.com
+**SauceDemo:**  
+https://www.saucedemo.com
 
-## 👤 Usuarios de prueba disponibles en SauceDemo
+## 👤 Usuarios utilizados
 
-- `standard_user` / `secret_sauce`
-- `locked_out_user` / `secret_sauce`
-- `problem_user` / `secret_sauce`
-- `performance_glitch_user` / `secret_sauce`
+| Usuario | Contraseña | Uso |
+|---|---|---|
+| `standard_user` | `secret_sauce` | Flujo normal de compra |
+| `locked_out_user` | `secret_sauce` | Validación de usuario bloqueado |
+| `problem_user` | `secret_sauce` | Pruebas de comportamiento con defectos conocidos |
+| `performance_glitch_user` | `secret_sauce` | Pruebas de rendimiento y tiempos de respuesta |
 
-## 📌 Notas
+## 🔍 Tipos de pruebas
 
-Este es un proyecto de práctica personal de QA manual, sin afiliación con SauceDemo/Sauce Labs.
+Durante el proyecto se aplicaron principalmente:
+
+- **Pruebas funcionales**
+- **Pruebas positivas**
+- **Pruebas negativas**
+- **Pruebas de validación**
+- **Pruebas de integración del flujo de compra**
+- **Pruebas exploratorias**
+- **Pruebas básicas de rendimiento**
+
+## 📌 Nota
+
+Este proyecto fue realizado como **práctica personal de QA Manual** con fines educativos y de portafolio.
+
+No existe afiliación con SauceDemo o Sauce Labs.
